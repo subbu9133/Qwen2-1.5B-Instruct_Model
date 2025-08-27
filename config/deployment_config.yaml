@@ -1,0 +1,290 @@
+# Qwen3 Content Moderation Model Deployment Configuration
+
+# Infrastructure Configuration
+infrastructure:
+  # Compute Resources
+  compute:
+    gpu:
+      type: "NVIDIA A100"  # or RTX 4090, V100, etc.
+      memory: "40GB"       # VRAM requirement
+      count: 1             # Number of GPUs
+    
+    cpu:
+      cores: 16
+      memory: "64GB"       # System RAM
+      type: "Intel Xeon"   # or AMD EPYC
+    
+    storage:
+      model_storage: "100GB"  # For model weights and cache
+      log_storage: "50GB"     # For logs and monitoring data
+      type: "NVMe SSD"
+  
+  # Cloud Provider Settings (if applicable)
+  cloud:
+    provider: "aws"  # aws, gcp, azure, or on-premise
+    region: "us-west-2"
+    instance_type: "p3.2xlarge"  # AWS instance type
+    
+    # Auto-scaling configuration
+    auto_scaling:
+      enabled: true
+      min_instances: 1
+      max_instances: 5
+      target_cpu_utilization: 70
+      scale_up_cooldown: 300  # seconds
+      scale_down_cooldown: 600
+
+# Application Configuration
+application:
+  # API Server Settings
+  server:
+    host: "0.0.0.0"
+    port: 8000
+    workers: 4  # Number of worker processes
+    max_requests_per_worker: 1000
+    timeout: 30  # Request timeout in seconds
+    
+  # Model Loading
+  model:
+    path: "./models/final/qwen3-content-moderation"
+    device: "cuda:0"
+    precision: "fp16"  # fp16, fp32, int8
+    max_batch_size: 8
+    
+    # Caching
+    cache:
+      enabled: true
+      max_size: "2GB"
+      ttl: 3600  # Cache TTL in seconds
+  
+  # Load Balancing
+  load_balancer:
+    type: "nginx"  # nginx, haproxy, or cloud load balancer
+    health_check:
+      path: "/health"
+      interval: 30
+      timeout: 5
+      healthy_threshold: 2
+      unhealthy_threshold: 3
+
+# Security Configuration
+security:
+  # Authentication
+  authentication:
+    enabled: true
+    type: "api_key"  # api_key, oauth2, jwt
+    
+    # API Key settings
+    api_key:
+      required: true
+      header_name: "X-API-Key"
+      rate_limit: 1000  # requests per hour per key
+  
+  # HTTPS/TLS
+  tls:
+    enabled: true
+    cert_path: "/etc/ssl/certs/server.crt"
+    key_path: "/etc/ssl/private/server.key"
+    min_version: "TLSv1.2"
+  
+  # Rate Limiting
+  rate_limiting:
+    enabled: true
+    global_limit: 10000  # requests per hour globally
+    per_ip_limit: 100    # requests per hour per IP
+    burst_limit: 10      # burst requests allowed
+  
+  # Input Validation
+  input_validation:
+    max_content_length: 10000  # characters
+    allowed_content_types: ["text/plain", "application/json"]
+    sanitization: true
+
+# Monitoring and Observability
+monitoring:
+  # Metrics Collection
+  metrics:
+    enabled: true
+    provider: "prometheus"  # prometheus, datadog, cloudwatch
+    port: 9090
+    
+    # Custom metrics
+    custom_metrics:
+      - "content_moderation_requests_total"
+      - "content_moderation_latency_seconds"
+      - "content_moderation_accuracy"
+      - "unsafe_content_detected_total"
+      - "model_inference_time_seconds"
+  
+  # Logging
+  logging:
+    level: "INFO"  # DEBUG, INFO, WARN, ERROR
+    format: "json"
+    
+    # Log destinations
+    destinations:
+      console: true
+      file: true
+      remote: false  # Set to true for centralized logging
+    
+    # File logging
+    file:
+      path: "/var/log/content-moderation"
+      max_size: "100MB"
+      backup_count: 5
+      rotation: "daily"
+  
+  # Health Checks
+  health_checks:
+    - name: "model_ready"
+      endpoint: "/health/model"
+      interval: 60
+    
+    - name: "api_responsive"
+      endpoint: "/health/api"
+      interval: 30
+    
+    - name: "memory_usage"
+      threshold: 0.85  # Alert if memory usage > 85%
+      interval: 60
+  
+  # Alerting
+  alerting:
+    enabled: true
+    
+    # Alert channels
+    channels:
+      email: "admin@company.com"
+      slack: "#ml-alerts"
+      webhook: "https://hooks.slack.com/webhook/..."
+    
+    # Alert rules
+    rules:
+      - name: "high_error_rate"
+        condition: "error_rate > 0.05"
+        duration: "5m"
+        severity: "critical"
+      
+      - name: "high_latency"
+        condition: "avg_latency > 500ms"
+        duration: "2m"
+        severity: "warning"
+      
+      - name: "model_accuracy_drop"
+        condition: "accuracy < 0.90"
+        duration: "10m"
+        severity: "critical"
+
+# Performance Configuration
+performance:
+  # Caching
+  caching:
+    # Redis configuration for distributed caching
+    redis:
+      enabled: false
+      host: "localhost"
+      port: 6379
+      db: 0
+      ttl: 3600
+    
+    # In-memory caching
+    memory_cache:
+      enabled: true
+      max_size: "1GB"
+      ttl: 1800
+  
+  # Connection Pooling
+  connection_pooling:
+    max_connections: 100
+    min_connections: 10
+    connection_timeout: 30
+    keepalive_timeout: 60
+  
+  # Batch Processing
+  batch_processing:
+    enabled: true
+    max_batch_size: 32
+    batch_timeout: 100  # milliseconds
+    queue_size: 1000
+
+# Backup and Recovery
+backup:
+  # Model Backup
+  model_backup:
+    enabled: true
+    frequency: "daily"
+    retention: 30  # days
+    destination: "s3://ml-models-backup/content-moderation"
+  
+  # Configuration Backup
+  config_backup:
+    enabled: true
+    frequency: "hourly"
+    retention: 7  # days
+
+# Environment-specific Settings
+environments:
+  development:
+    debug: true
+    log_level: "DEBUG"
+    auto_reload: true
+    rate_limiting:
+      enabled: false
+  
+  staging:
+    debug: false
+    log_level: "INFO"
+    rate_limiting:
+      enabled: true
+      global_limit: 1000
+  
+  production:
+    debug: false
+    log_level: "WARN"
+    rate_limiting:
+      enabled: true
+      global_limit: 10000
+    
+    # Production-specific monitoring
+    monitoring:
+      detailed_metrics: true
+      performance_profiling: true
+      error_tracking: true
+
+# Deployment Strategy
+deployment:
+  strategy: "blue_green"  # blue_green, rolling, canary
+  
+  # Blue-Green Deployment
+  blue_green:
+    switch_traffic_percentage: 100
+    verification_time: 300  # seconds
+    rollback_on_failure: true
+  
+  # Canary Deployment
+  canary:
+    initial_percentage: 10
+    increment_percentage: 25
+    promotion_interval: 300  # seconds
+    success_threshold: 0.99  # Success rate threshold
+
+# Maintenance
+maintenance:
+  # Scheduled maintenance windows
+  windows:
+    - day: "sunday"
+      start_time: "02:00"
+      duration: "2h"
+      timezone: "UTC"
+  
+  # Update policies
+  updates:
+    automatic_security_updates: true
+    automatic_minor_updates: false
+    automatic_major_updates: false
+    
+  # Cleanup policies
+  cleanup:
+    old_logs: "30d"
+    old_models: "90d"
+    temp_files: "7d"

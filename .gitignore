@@ -1,0 +1,79 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Virtual environments
+venv/
+env/
+ENV/
+env.bak/
+venv.bak/
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# PyCharm
+.idea/
+
+# VS Code
+.vscode/
+
+# Logs
+logs/
+*.log
+
+# Model files and checkpoints
+models/checkpoints/
+models/final/
+*.pth
+*.pt
+*.ckpt
+*.bin
+
+# Large data files (but keep structure)
+data/raw/
+data/processed/
+*.csv
+*.json
+*.jsonl
+*.txt
+*.zip
+
+# Wandb
+wandb/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Temporary files
+*.tmp
+*.temp
+
+# Keep important project files
+!requirements.txt
+!setup.py
+!README.md
+!*.py
+!*.sh
+!*.yaml
+!*.yml

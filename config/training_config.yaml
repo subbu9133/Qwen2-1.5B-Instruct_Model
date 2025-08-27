@@ -1,0 +1,108 @@
+data:
+  categories:
+  - sexually_explicit
+  - dangerous_content
+  - hate_speech
+  - harassment
+  - misinformation
+  - privacy_violation
+  - illegal_activity
+  - safe_content
+  max_eval_samples: null
+  max_train_samples: null
+  preprocessing_num_workers: 4
+  test_file: data/processed\combined_amazon_twitter\test.jsonl
+  train_file: data/processed\combined_amazon_twitter\train.jsonl
+  validation_file: data/processed\combined_amazon_twitter\validation.jsonl
+deepspeed:
+  config_file: ./config/deepspeed_config.json
+  enable: false
+evaluation:
+  metrics:
+  - accuracy
+  - precision
+  - recall
+  - f1
+  - roc_auc
+  safety_thresholds:
+    dangerous_content: 0.4
+    default: 0.5
+    harassment: 0.4
+    hate_speech: 0.3
+    illegal_activity: 0.3
+    misinformation: 0.5
+    privacy_violation: 0.4
+    sexually_explicit: 0.3
+inference:
+  do_sample: true
+  max_new_tokens: 512
+  repetition_penalty: 1.1
+  temperature: 0.1
+  top_p: 0.9
+lora:
+  bias: none
+  lora_alpha: 32
+  lora_dropout: 0.05
+  r: 16
+  target_modules:
+  - q_proj
+  - v_proj
+  - k_proj
+  - o_proj
+  - gate_proj
+  - up_proj
+  - down_proj
+  task_type: CAUSAL_LM
+model:
+  device_map: auto
+  load_in_4bit: false
+  load_in_8bit: false
+  max_sequence_length: 2048
+  name: Qwen/Qwen2-1.5B
+  torch_dtype: bfloat16
+num_labels: 2
+task: sentiment_analysis
+training:
+  adam_beta1: 0.9
+  adam_beta2: 0.999
+  adam_epsilon: 0.00000001
+  bf16: false
+  dataloader_pin_memory: true
+  early_stopping_patience: 3
+  early_stopping_threshold: 0.001
+  eval_steps: 200
+  evaluation_strategy: steps
+  fp16: false
+  gradient_accumulation_steps: 8
+  gradient_checkpointing: false
+  greater_is_better: true
+  learning_rate: 0.0002
+  load_best_model_at_end: true
+  logging_steps: 10
+  lr_scheduler_type: cosine
+  max_grad_norm: 1.0
+  metric_for_best_model: eval_f1
+  num_train_epochs: 3
+  optim: adamw_torch
+  output_dir: ./models/checkpoints
+  per_device_eval_batch_size: 4
+  per_device_train_batch_size: 2
+  remove_unused_columns: false
+  report_to:
+  - wandb
+  run_name: sentiment-analysis-amazon-twitter
+  save_steps: 400
+  save_strategy: steps
+  save_total_limit: 3
+  warmup_ratio: 0.1
+  weight_decay: 0.001
+wandb:
+  entity: null
+  notes: Fine-tuning Qwen3-14B for content moderation combining ShieldGemma and LlamaGuard
+    capabilities
+  project: qwen3-content-moderation
+  tags:
+  - qwen3
+  - content-moderation
+  - safety
+  - lora

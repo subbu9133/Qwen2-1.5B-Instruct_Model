@@ -1,0 +1,133 @@
+# Qwen3 Content Moderation Training Configuration
+
+# Model Configuration
+model:
+  name: "Qwen/Qwen3-14B"  # Base model to fine-tune
+  max_sequence_length: 2048
+  torch_dtype: "bfloat16"  # Use bfloat16 for better performance
+  device_map: "auto"
+  load_in_4bit: true  # Enable 4-bit quantization to save memory
+  load_in_8bit: false
+
+# LoRA Configuration (Parameter Efficient Fine-tuning)
+lora:
+  r: 16  # Rank of adaptation
+  lora_alpha: 32  # LoRA scaling parameter
+  target_modules: 
+    - "q_proj"
+    - "v_proj"
+    - "k_proj"
+    - "o_proj"
+    - "gate_proj"
+    - "up_proj"
+    - "down_proj"
+  lora_dropout: 0.05
+  bias: "none"
+  task_type: "CAUSAL_LM"
+
+# Training Arguments
+training:
+  output_dir: "./models/checkpoints"
+  num_train_epochs: 3
+  per_device_train_batch_size: 2  # Adjust based on GPU memory
+  per_device_eval_batch_size: 4
+  gradient_accumulation_steps: 8  # Effective batch size = 2 * 8 = 16
+  learning_rate: 2e-4
+  weight_decay: 0.001
+  warmup_ratio: 0.1
+  lr_scheduler_type: "cosine"
+  
+  # Optimization
+  optim: "adamw_torch"
+  adam_beta1: 0.9
+  adam_beta2: 0.999
+  adam_epsilon: 1e-8
+  max_grad_norm: 1.0
+  
+  # Logging and Evaluation
+  logging_steps: 10
+  evaluation_strategy: "steps"
+  eval_steps: 200
+  save_strategy: "steps"
+  save_steps: 500
+  save_total_limit: 3
+  metric_for_best_model: "eval_f1"
+  greater_is_better: true
+  load_best_model_at_end: true
+  
+  # Early Stopping
+  early_stopping_patience: 3
+  early_stopping_threshold: 0.001
+  
+  # Memory and Performance
+  dataloader_pin_memory: true
+  remove_unused_columns: false
+  fp16: false
+  bf16: true
+  gradient_checkpointing: true
+  
+  # Reporting
+  report_to: ["wandb"]  # Options: wandb, tensorboard, none
+  run_name: "qwen3-content-moderation"
+
+# Data Configuration
+data:
+  train_file: "./data/processed/train.jsonl"
+  validation_file: "./data/processed/validation.jsonl"
+  test_file: "./data/processed/test.jsonl"
+  max_train_samples: null  # Set to limit training samples for testing
+  max_eval_samples: null
+  
+  # Data Processing
+  preprocessing_num_workers: 4
+  
+  # Content Moderation Categories
+  categories:
+    - "sexually_explicit"
+    - "dangerous_content"
+    - "hate_speech"
+    - "harassment"
+    - "misinformation"
+    - "privacy_violation"
+    - "illegal_activity"
+    - "safe_content"
+
+# DeepSpeed Configuration (for distributed training)
+deepspeed:
+  enable: false  # Set to true for multi-GPU training
+  config_file: "./config/deepspeed_config.json"
+
+# Wandb Configuration
+wandb:
+  project: "qwen3-content-moderation"
+  entity: null  # Your wandb username/team
+  tags: ["qwen3", "content-moderation", "safety", "lora"]
+  notes: "Fine-tuning Qwen3-14B for content moderation combining ShieldGemma and LlamaGuard capabilities"
+
+# Evaluation Configuration
+evaluation:
+  metrics:
+    - "accuracy"
+    - "precision"
+    - "recall"
+    - "f1"
+    - "roc_auc"
+  
+  # Safety Thresholds
+  safety_thresholds:
+    default: 0.5
+    sexually_explicit: 0.3  # Lower threshold for more sensitive detection
+    dangerous_content: 0.4
+    hate_speech: 0.3
+    harassment: 0.4
+    misinformation: 0.5
+    privacy_violation: 0.4
+    illegal_activity: 0.3
+
+# Inference Configuration
+inference:
+  max_new_tokens: 512
+  temperature: 0.1  # Low temperature for consistent safety classifications
+  top_p: 0.9
+  do_sample: true
+  repetition_penalty: 1.1

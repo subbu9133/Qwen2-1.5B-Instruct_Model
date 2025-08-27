@@ -1,0 +1,252 @@
+# Qwen3-4B Model Configuration for Content Moderation
+# Combines capabilities of ShieldGemma-2B and Llama-Guard-4-12B
+
+# Base Model Specifications
+base_model:
+  name: "Qwen/Qwen3-4B"
+  architecture: "QwenForCausalLM"
+  vocab_size: 151936
+  hidden_size: 2048
+  intermediate_size: 5632
+  num_hidden_layers: 24
+  num_attention_heads: 16
+  max_position_embeddings: 32768
+  rope_theta: 1000000.0
+  tie_word_embeddings: false
+  use_sliding_window: false
+  sliding_window: 4096
+
+# Model Capabilities (Combined from ShieldGemma-2B and Llama-Guard-4-12B)
+capabilities:
+  # Content Categories (Enhanced from both models)
+  content_categories:
+    sexually_explicit:
+      description: "Sexually explicit content including nudity, sexual acts, and inappropriate sexual material"
+      severity_levels: ["low", "medium", "high", "critical"]
+      keywords: ["sexual", "explicit", "nudity", "pornographic", "inappropriate"]
+      threshold: 0.3
+    
+    dangerous_content:
+      description: "Content promoting dangerous activities, self-harm, violence, or harm to others"
+      severity_levels: ["low", "medium", "high", "critical"]
+      keywords: ["violence", "harm", "dangerous", "weapon", "suicide", "self-harm", "threat"]
+      threshold: 0.4
+    
+    hate_speech:
+      description: "Discriminatory language targeting individuals or groups based on protected characteristics"
+      severity_levels: ["low", "medium", "high", "critical"]
+      keywords: ["hate", "discrimination", "racist", "homophobic", "xenophobic", "bigoted"]
+      threshold: 0.3
+    
+    harassment:
+      description: "Bullying, stalking, targeted harassment, or abusive behavior towards individuals"
+      severity_levels: ["low", "medium", "high", "critical"]
+      keywords: ["bullying", "harassment", "stalking", "threatening", "abusive", "intimidating"]
+      threshold: 0.4
+    
+    misinformation:
+      description: "False or misleading information that could cause harm or spread confusion"
+      severity_levels: ["low", "medium", "high", "critical"]
+      keywords: ["false", "misleading", "conspiracy", "misinformation", "fake news", "hoax"]
+      threshold: 0.5
+    
+    privacy_violation:
+      description: "Content that violates privacy or shares personal/confidential information"
+      severity_levels: ["low", "medium", "high", "critical"]
+      keywords: ["personal info", "doxxing", "private", "confidential", "address", "phone"]
+      threshold: 0.4
+    
+    illegal_activity:
+      description: "Content promoting or facilitating illegal activities or criminal behavior"
+      severity_levels: ["medium", "high", "critical"]
+      keywords: ["illegal", "drug", "fraud", "terrorism", "trafficking", "criminal"]
+      threshold: 0.2
+    
+    safe_content:
+      description: "Content that is safe, appropriate, and follows community guidelines"
+      severity_levels: ["safe"]
+      keywords: ["appropriate", "safe", "educational", "informative", "helpful"]
+      threshold: 0.7
+
+# Model Input/Output Format (ShieldGemma-2B + Llama-Guard-4-12B style)
+input_output:
+  # Input Format (Combined approach)
+  input_template: |
+    <|im_start|>system
+    You are a content moderation AI that combines the safety capabilities of ShieldGemma and Llama-Guard. 
+    Analyze the following content and classify it according to safety categories. 
+    Provide detailed reasoning and classification with confidence scores.
+    <|im_end|>
+    <|im_start|>user
+    Content to analyze: {content}
+    <|im_end|>
+    <|im_start|>assistant
+  
+  # Output Format (Structured response)
+  output_template: |
+    Classification: {classification}
+    Categories: {categories}
+    Severity: {severity}
+    Confidence: {confidence}
+    Reasoning: {reasoning}
+    Safety_Score: {safety_score}
+    <|im_end|>
+  
+  # Response Structure
+  response_schema:
+    classification: "string"  # "SAFE" or "UNSAFE"
+    categories:
+      type: "list"
+      items: "string"  # List of detected categories
+    severity: "string"  # "safe", "low", "medium", "high", "critical"
+    confidence: "float"  # 0.0 to 1.0
+    reasoning: "string"  # Detailed explanation
+    safety_score: "float"  # Overall safety score (0.0-1.0)
+
+# Safety Thresholds and Rules (Combined from both models)
+safety_rules:
+  # Default thresholds for classification
+  classification_thresholds:
+    safe_threshold: 0.7  # Confidence threshold for SAFE classification
+    unsafe_threshold: 0.3  # Confidence threshold for UNSAFE classification
+    
+  # Category-specific thresholds (from ShieldGemma-2B and Llama-Guard-4-12B)
+  category_thresholds:
+    sexually_explicit: 0.3
+    dangerous_content: 0.4
+    hate_speech: 0.3
+    harassment: 0.4
+    misinformation: 0.5
+    privacy_violation: 0.4
+    illegal_activity: 0.2
+  
+  # Severity mapping (Enhanced from both models)
+  severity_mapping:
+    safe: [0.7, 1.0]
+    low: [0.3, 0.5]
+    medium: [0.5, 0.7]
+    high: [0.7, 0.9]
+    critical: [0.9, 1.0]
+  
+  # Safety scoring algorithm
+  safety_scoring:
+    base_score: 1.0
+    category_penalties:
+      sexually_explicit: 0.8
+      dangerous_content: 0.9
+      hate_speech: 0.7
+      harassment: 0.8
+      misinformation: 0.6
+      privacy_violation: 0.7
+      illegal_activity: 1.0
+
+# Performance Specifications
+performance:
+  # Latency requirements
+  max_inference_time: "100ms"  # Maximum time per inference
+  target_throughput: "1000 requests/second"
+  
+  # Accuracy targets (Combined from both models)
+  target_metrics:
+    accuracy: 0.95
+    precision: 0.90
+    recall: 0.85
+    f1_score: 0.88
+    false_positive_rate: 0.05
+    false_negative_rate: 0.10
+  
+  # Memory requirements (Optimized for Qwen3-4B)
+  memory_footprint:
+    training: "16GB VRAM"  # With LoRA
+    inference: "4GB VRAM"  # With quantization
+    cpu_memory: "16GB RAM"
+
+# Integration Specifications
+integration:
+  # API endpoints
+  endpoints:
+    moderate_content: "/api/v1/moderate"
+    batch_moderate: "/api/v1/moderate/batch"
+    health_check: "/api/v1/health"
+    safety_score: "/api/v1/safety-score"
+  
+  # Supported input formats
+  input_formats:
+    - "text/plain"
+    - "application/json"
+    - "multipart/form-data"
+  
+  # Output formats
+  output_formats:
+    - "application/json"
+    - "text/plain"
+
+# Monitoring and Logging
+monitoring:
+  # Metrics to track
+  tracking_metrics:
+    - "requests_per_second"
+    - "average_response_time"
+    - "classification_accuracy"
+    - "category_distribution"
+    - "confidence_scores"
+    - "error_rate"
+    - "safety_score_distribution"
+  
+  # Logging levels
+  log_levels:
+    - "INFO"   # General information
+    - "WARN"   # Warnings and edge cases
+    - "ERROR"  # Errors and failures
+    - "DEBUG"  # Detailed debugging information
+  
+  # Alert thresholds
+  alerts:
+    high_error_rate: 0.05  # Alert if error rate > 5%
+    low_accuracy: 0.90     # Alert if accuracy < 90%
+    high_latency: 200      # Alert if latency > 200ms
+    low_safety_score: 0.3  # Alert if average safety score < 0.3
+
+# Model Versioning
+versioning:
+  current_version: "1.0.0"
+  compatibility:
+    backward_compatible: true
+    api_version: "v1"
+  
+  # Update strategy
+  update_strategy:
+    type: "rolling"
+    rollback_enabled: true
+    canary_percentage: 0.1
+
+# Training Configuration (LoRA)
+training:
+  lora:
+    r: 16
+    lora_alpha: 32
+    lora_dropout: 0.05
+    target_modules:
+      - "q_proj"
+      - "v_proj"
+      - "k_proj"
+      - "o_proj"
+      - "gate_proj"
+      - "up_proj"
+      - "down_proj"
+    bias: "none"
+    task_type: "CAUSAL_LM"
+  
+  quantization:
+    load_in_4bit: true
+    bnb_4bit_quant_type: "nf4"
+    bnb_4bit_compute_dtype: "bfloat16"
+    bnb_4bit_use_double_quant: true
+  
+  optimization:
+    gradient_checkpointing: true
+    gradient_accumulation_steps: 8
+    max_grad_norm: 1.0
+    warmup_ratio: 0.1
+    learning_rate: 2e-4
+    weight_decay: 0.001
