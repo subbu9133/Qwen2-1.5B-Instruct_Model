@@ -11,10 +11,9 @@
 7. [Deployment Guide](#deployment-guide)
 8. [Performance Metrics](#performance-metrics)
 9. [Technical Specifications](#technical-specifications)
-10. [API Documentation](#api-documentation)
-11. [Troubleshooting](#troubleshooting)
-12. [Future Improvements](#future-improvements)
-13. [Appendices](#appendices)
+10. [Troubleshooting](#troubleshooting)
+11. [Future Improvements](#future-improvements)
+12. [Appendices](#appendices)
 
 ---
 
