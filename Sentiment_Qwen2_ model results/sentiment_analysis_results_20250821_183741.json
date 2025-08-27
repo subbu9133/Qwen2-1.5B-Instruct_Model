@@ -1,0 +1,614 @@
+[
+  {
+    "text": "I absolutely love this product! It exceeded all my expectations and works perfectly.",
+    "predicted_sentiment": "POSITIVE",
+    "confidence": 0.95,
+    "generated_part": " Positive.\n\nThe sentiment analysis of the given text is"
+  },
+  {
+    "text": "The customer service was amazing, they went above and beyond to help me.",
+    "predicted_sentiment": "POSITIVE",
+    "confidence": 0.95,
+    "generated_part": " Positive.\n\nThe given text expresses a positive sentiment towards"
+  },
+  {
+    "text": "This restaurant serves the most delicious food I've ever tasted.",
+    "predicted_sentiment": "POSITIVE",
+    "confidence": 0.95,
+    "generated_part": " Positive.\n\nThe sentiment of the text is positive because"
+  },
+  {
+    "text": "The movie was fantastic with incredible acting and a compelling storyline.",
+    "predicted_sentiment": "POSITIVE",
+    "confidence": 0.95,
+    "generated_part": " Positive.\n\nThe given text expresses a strong positive sentiment"
+  },
+  {
+    "text": "I'm so happy with my purchase, it's exactly what I was looking for.",
+    "predicted_sentiment": "POSITIVE",
+    "confidence": 0.95,
+    "generated_part": " Positive. The sentiment expressed in the text is overwhelmingly"
+  },
+  {
+    "text": "The weather today is beautiful and perfect for a picnic.",
+    "predicted_sentiment": "POSITIVE",
+    "confidence": 0.95,
+    "generated_part": " Positive.\n\nThe given text \"The weather today is"
+  },
+  {
+    "text": "My team won the championship! We're all celebrating this victory.",
+    "predicted_sentiment": "POSITIVE",
+    "confidence": 0.95,
+    "generated_part": " Positive. The text expresses joy and celebration, which"
+  },
+  {
+    "text": "The new features in this app are brilliant and make everything so much easier.",
+    "predicted_sentiment": "POSITIVE",
+    "confidence": 0.95,
+    "generated_part": " Positive.\n\nThe given text expresses a positive sentiment towards"
+  },
+  {
+    "text": "I had a wonderful time at the party, everyone was so friendly.",
+    "predicted_sentiment": "POSITIVE",
+    "confidence": 0.95,
+    "generated_part": " Positive.\n\nThe sentiment of the text is positive because"
+  },
+  {
+    "text": "This book is absolutely captivating, I couldn't put it down.",
+    "predicted_sentiment": "POSITIVE",
+    "confidence": 0.95,
+    "generated_part": " Positive.\n\nThe sentiment of the text \"This book"
+  },
+  {
+    "text": "The concert was incredible, the music was absolutely perfect.",
+    "predicted_sentiment": "POSITIVE",
+    "confidence": 0.95,
+    "generated_part": " Positive.\n\nThe given text expresses a strong positive sentiment"
+  },
+  {
+    "text": "I'm thrilled with the results, everything turned out better than expected.",
+    "predicted_sentiment": "POSITIVE",
+    "confidence": 0.95,
+    "generated_part": " Positive. The sentiment expressed in the text is overwhelmingly"
+  },
+  {
+    "text": "The food at this place is absolutely delicious and worth every penny.",
+    "predicted_sentiment": "POSITIVE",
+    "confidence": 0.95,
+    "generated_part": " Positive.\n\nThe sentiment analysis of the given text \""
+  },
+  {
+    "text": "This is the best experience I've ever had, truly amazing.",
+    "predicted_sentiment": "POSITIVE",
+    "confidence": 0.95,
+    "generated_part": " Positive. The sentiment expressed in the text is overwhelmingly"
+  },
+  {
+    "text": "I love how easy and intuitive this interface is to use.",
+    "predicted_sentiment": "POSITIVE",
+    "confidence": 0.95,
+    "generated_part": " Positive.\n\nThe sentiment analysis of the given text \""
+  },
+  {
+    "text": "The service was exceptional, they really know how to treat customers.",
+    "predicted_sentiment": "POSITIVE",
+    "confidence": 0.95,
+    "generated_part": " Positive.\n\nThe given text expresses a positive sentiment towards"
+  },
+  {
+    "text": "This product is fantastic, it's exactly what I needed.",
+    "predicted_sentiment": "POSITIVE",
+    "confidence": 0.95,
+    "generated_part": " Positive.\n\nThe sentiment of the text \"This product"
+  },
+  {
+    "text": "I'm delighted with the quality and performance of this item.",
+    "predicted_sentiment": "POSITIVE",
+    "confidence": 0.95,
+    "generated_part": " Positive.\n\nThe sentiment of the text is positive because"
+  },
+  {
+    "text": "The staff was incredibly helpful and went out of their way to assist me.",
+    "predicted_sentiment": "POSITIVE",
+    "confidence": 0.95,
+    "generated_part": " Positive.\n\nThe given text expresses a positive sentiment as"
+  },
+  {
+    "text": "This is absolutely perfect, I couldn't ask for anything better.",
+    "predicted_sentiment": "POSITIVE",
+    "confidence": 0.95,
+    "generated_part": " Positive.\n\nThe sentiment of the text \"This is"
+  },
+  {
+    "text": "I'm so grateful for this amazing opportunity.",
+    "predicted_sentiment": "POSITIVE",
+    "confidence": 0.95,
+    "generated_part": " Positive. The phrase \"amazing opportunity\" inherently"
+  },
+  {
+    "text": "The performance was outstanding, truly world-class.",
+    "predicted_sentiment": "POSITIVE",
+    "confidence": 0.95,
+    "generated_part": " Positive.\n\nThe sentiment analysis of the given text is"
+  },
+  {
+    "text": "This solution is brilliant and solves all my problems.",
+    "predicted_sentiment": "POSITIVE",
+    "confidence": 0.95,
+    "generated_part": " Positive. The phrase \"brilliant\" and"
+  },
+  {
+    "text": "I'm impressed with the attention to detail and craftsmanship.",
+    "predicted_sentiment": "POSITIVE",
+    "confidence": 0.95,
+    "generated_part": " Positive.\n\nThe sentiment of the text is positive because"
+  },
+  {
+    "text": "The experience was magical and unforgettable.",
+    "predicted_sentiment": "POSITIVE",
+    "confidence": 0.95,
+    "generated_part": " Positive.\n\nThe given text \"The experience was magical"
+  },
+  {
+    "text": "This is exactly what I was hoping for, absolutely perfect.",
+    "predicted_sentiment": "POSITIVE",
+    "confidence": 0.95,
+    "generated_part": " Positive. The sentiment expressed in the text \"This"
+  },
+  {
+    "text": "I'm overjoyed with the results and couldn't be happier.",
+    "predicted_sentiment": "POSITIVE",
+    "confidence": 0.95,
+    "generated_part": " Positive. The phrase \"overjoyed\" and"
+  },
+  {
+    "text": "The quality is exceptional and exceeds all expectations.",
+    "predicted_sentiment": "POSITIVE",
+    "confidence": 0.95,
+    "generated_part": " Positive. The sentiment of the text is positive because"
+  },
+  {
+    "text": "This is a game-changer, absolutely revolutionary.",
+    "predicted_sentiment": "POSITIVE",
+    "confidence": 0.95,
+    "generated_part": " Positive. The phrase \"game-changer\" and"
+  },
+  {
+    "text": "I'm amazed by how well this works, it's incredible.",
+    "predicted_sentiment": "POSITIVE",
+    "confidence": 0.95,
+    "generated_part": " Positive. The phrase \"amazed\" and \""
+  },
+  {
+    "text": "The design is beautiful and the functionality is perfect.",
+    "predicted_sentiment": "POSITIVE",
+    "confidence": 0.95,
+    "generated_part": " Positive.\n\nThe sentiment analysis of the given text \""
+  },
+  {
+    "text": "This exceeded all my expectations, truly remarkable.",
+    "predicted_sentiment": "POSITIVE",
+    "confidence": 0.95,
+    "generated_part": " Positive.\n\nThe sentiment of the text is positive because"
+  },
+  {
+    "text": "I'm so satisfied with this purchase, it's perfect.",
+    "predicted_sentiment": "POSITIVE",
+    "confidence": 0.95,
+    "generated_part": " Positive.\n\nThe sentiment of the text is positive because"
+  },
+  {
+    "text": "The performance is outstanding and reliable.",
+    "predicted_sentiment": "POSITIVE",
+    "confidence": 0.95,
+    "generated_part": " Positive.\n\nThe sentiment of the text \"The performance"
+  },
+  {
+    "text": "This is the best decision I've ever made.",
+    "predicted_sentiment": "POSITIVE",
+    "confidence": 0.95,
+    "generated_part": " Positive. The sentiment expressed in the text \"This"
+  },
+  {
+    "text": "I'm thrilled with the outcome, it's exactly what I wanted.",
+    "predicted_sentiment": "POSITIVE",
+    "confidence": 0.95,
+    "generated_part": " Positive. The sentiment expressed in the text is overwhelmingly"
+  },
+  {
+    "text": "The experience was wonderful and memorable.",
+    "predicted_sentiment": "POSITIVE",
+    "confidence": 0.95,
+    "generated_part": " Positive.\n\nThe given text \"The experience was wonderful"
+  },
+  {
+    "text": "This product is exceptional in every way.",
+    "predicted_sentiment": "POSITIVE",
+    "confidence": 0.95,
+    "generated_part": " Positive.\n\nThe sentiment analysis of the given text \""
+  },
+  {
+    "text": "I'm delighted with the results and quality.",
+    "predicted_sentiment": "POSITIVE",
+    "confidence": 0.95,
+    "generated_part": " Positive.\n\nThe sentiment of the text is positive because"
+  },
+  {
+    "text": "This is absolutely fantastic and highly recommended.",
+    "predicted_sentiment": "POSITIVE",
+    "confidence": 0.95,
+    "generated_part": " Positive.\n\nThe sentiment of the text \"This is"
+  },
+  {
+    "text": "This product is terrible, it broke after just one day of use.",
+    "predicted_sentiment": "NEGATIVE",
+    "confidence": 0.95,
+    "generated_part": " Negative.\n\nThe sentiment expressed in the text \"This"
+  },
+  {
+    "text": "The customer service was horrible, they were rude and unhelpful.",
+    "predicted_sentiment": "NEGATIVE",
+    "confidence": 0.95,
+    "generated_part": " Negative.\n\nThe given text expresses dissatisfaction with the customer"
+  },
+  {
+    "text": "The food at this restaurant was disgusting and overpriced.",
+    "predicted_sentiment": "NEGATIVE",
+    "confidence": 0.95,
+    "generated_part": " Negative.\n\nThe given text expresses a strong negative sentiment"
+  },
+  {
+    "text": "This movie was awful, I wasted two hours of my life watching it.",
+    "predicted_sentiment": "NEGATIVE",
+    "confidence": 0.95,
+    "generated_part": " Negative.\n\nThe sentiment expressed in the text is clearly"
+  },
+  {
+    "text": "I'm extremely disappointed with the quality of this item.",
+    "predicted_sentiment": "NEGATIVE",
+    "confidence": 0.95,
+    "generated_part": " Negative.\n\nThe sentiment expressed in the text \"I"
+  },
+  {
+    "text": "The weather is terrible today, it's raining non-stop.",
+    "predicted_sentiment": "NEGATIVE",
+    "confidence": 0.95,
+    "generated_part": " Negative.\n\nThe given text expresses a strong negative sentiment"
+  },
+  {
+    "text": "My team lost the game, I'm so frustrated with their performance.",
+    "predicted_sentiment": "NEGATIVE",
+    "confidence": 0.95,
+    "generated_part": " Negative.\n\nThe sentiment expressed in the text is clearly"
+  },
+  {
+    "text": "This app is buggy and crashes constantly, it's unusable.",
+    "predicted_sentiment": "NEGATIVE",
+    "confidence": 0.95,
+    "generated_part": " Negative.\n\nThe sentiment analysis of the given text \""
+  },
+  {
+    "text": "The party was boring, I left early because nothing was happening.",
+    "predicted_sentiment": "NEGATIVE",
+    "confidence": 0.95,
+    "generated_part": " Negative.\n\nThe given text expresses dissatisfaction and a desire"
+  },
+  {
+    "text": "This book is poorly written and hard to follow.",
+    "predicted_sentiment": "NEGATIVE",
+    "confidence": 0.95,
+    "generated_part": " Negative.\n\nThe sentiment analysis of the given text \""
+  },
+  {
+    "text": "The service was atrocious, I've never experienced anything worse.",
+    "predicted_sentiment": "NEGATIVE",
+    "confidence": 0.95,
+    "generated_part": " Negative.\n\nThe given text expresses dissatisfaction and disappointment,"
+  },
+  {
+    "text": "I'm furious about how poorly this was handled.",
+    "predicted_sentiment": "NEGATIVE",
+    "confidence": 0.95,
+    "generated_part": " Negative.\n\nThe sentiment expressed in the text \"I"
+  },
+  {
+    "text": "This is the worst product I've ever purchased.",
+    "predicted_sentiment": "NEGATIVE",
+    "confidence": 0.95,
+    "generated_part": " Negative.\n\nThe given text \"This is the worst"
+  },
+  {
+    "text": "The quality is abysmal and not worth the money.",
+    "predicted_sentiment": "NEGATIVE",
+    "confidence": 0.95,
+    "generated_part": " Negative.\n\nThe given text expresses a strong negative sentiment"
+  },
+  {
+    "text": "I'm disgusted by the poor service and attitude.",
+    "predicted_sentiment": "NEGATIVE",
+    "confidence": 0.95,
+    "generated_part": " Negative.\n\nThe sentiment expressed in the text is clearly"
+  },
+  {
+    "text": "This experience was miserable and I want a refund.",
+    "predicted_sentiment": "NEGATIVE",
+    "confidence": 0.95,
+    "generated_part": " Negative.\n\nThe sentiment expressed in the text is clearly"
+  },
+  {
+    "text": "The food was inedible and made me sick.",
+    "predicted_sentiment": "NEGATIVE",
+    "confidence": 0.95,
+    "generated_part": " Negative.\n\nThe given text expresses a strong negative sentiment"
+  },
+  {
+    "text": "I'm appalled by the lack of professionalism.",
+    "predicted_sentiment": "NEGATIVE",
+    "confidence": 0.95,
+    "generated_part": " Negative.\n\nThe sentiment expressed in the text \"I"
+  },
+  {
+    "text": "This is absolutely terrible and I regret buying it.",
+    "predicted_sentiment": "NEGATIVE",
+    "confidence": 0.95,
+    "generated_part": " Negative. The sentiment expressed in the text is clearly"
+  },
+  {
+    "text": "The performance is abysmal and unacceptable.",
+    "predicted_sentiment": "NEGATIVE",
+    "confidence": 0.95,
+    "generated_part": " Negative.\n\nThe given text \"The performance is ab"
+  },
+  {
+    "text": "I'm outraged by the poor quality and service.",
+    "predicted_sentiment": "NEGATIVE",
+    "confidence": 0.95,
+    "generated_part": " Negative.\n\nThe sentiment expressed in the text is clearly"
+  },
+  {
+    "text": "This is the most disappointing purchase ever.",
+    "predicted_sentiment": "NEGATIVE",
+    "confidence": 0.95,
+    "generated_part": " Negative.\n\nThe sentiment expressed in the text \"This"
+  },
+  {
+    "text": "The customer support is useless and unhelpful.",
+    "predicted_sentiment": "NEGATIVE",
+    "confidence": 0.95,
+    "generated_part": " Negative.\n\nThe given text expresses dissatisfaction and frustration towards"
+  },
+  {
+    "text": "I'm devastated by how bad this turned out.",
+    "predicted_sentiment": "NEGATIVE",
+    "confidence": 0.95,
+    "generated_part": " Negative.\n\nThe sentiment expressed in the text \"I"
+  },
+  {
+    "text": "This product is defective and dangerous.",
+    "predicted_sentiment": "NEGATIVE",
+    "confidence": 0.95,
+    "generated_part": " Negative.\n\nThe sentiment expressed in the text \"This"
+  },
+  {
+    "text": "The experience was horrible and traumatizing.",
+    "predicted_sentiment": "NEGATIVE",
+    "confidence": 0.95,
+    "generated_part": " Negative.\n\nThe given text expresses a strong negative sentiment"
+  },
+  {
+    "text": "I'm shocked by the poor standards and quality.",
+    "predicted_sentiment": "NEGATIVE",
+    "confidence": 0.95,
+    "generated_part": " Negative.\n\nThe sentiment expressed in the text \"I"
+  },
+  {
+    "text": "This is completely unacceptable and needs to be fixed.",
+    "predicted_sentiment": "NEGATIVE",
+    "confidence": 0.95,
+    "generated_part": " Negative. The sentiment expressed in the text \"This"
+  },
+  {
+    "text": "The service was terrible and unprofessional.",
+    "predicted_sentiment": "NEGATIVE",
+    "confidence": 0.95,
+    "generated_part": " Negative.\n\nThe given text \"The service was terrible"
+  },
+  {
+    "text": "I'm disgusted with the poor quality and workmanship.",
+    "predicted_sentiment": "NEGATIVE",
+    "confidence": 0.95,
+    "generated_part": " Negative.\n\nThe sentiment expressed in the text is clearly"
+  },
+  {
+    "text": "This is a complete waste of money and time.",
+    "predicted_sentiment": "NEGATIVE",
+    "confidence": 0.95,
+    "generated_part": " Negative.\n\nThe sentiment expressed in the text \"This"
+  },
+  {
+    "text": "The performance is terrible and unreliable.",
+    "predicted_sentiment": "NEGATIVE",
+    "confidence": 0.95,
+    "generated_part": " Negative.\n\nThe given text \"The performance is terrible"
+  },
+  {
+    "text": "I'm furious about the poor service and quality.",
+    "predicted_sentiment": "NEGATIVE",
+    "confidence": 0.95,
+    "generated_part": " Negative.\n\nThe sentiment expressed in the text is clearly"
+  },
+  {
+    "text": "This is the worst experience I've ever had.",
+    "predicted_sentiment": "NEGATIVE",
+    "confidence": 0.95,
+    "generated_part": " Negative.\n\nThe given text \"This is the worst"
+  },
+  {
+    "text": "The product is broken and doesn't work at all.",
+    "predicted_sentiment": "NEGATIVE",
+    "confidence": 0.95,
+    "generated_part": " Negative.\n\nThe given text \"The product is broken"
+  },
+  {
+    "text": "I'm appalled by the lack of quality control.",
+    "predicted_sentiment": "NEGATIVE",
+    "confidence": 0.95,
+    "generated_part": " Negative.\n\nThe sentiment expressed in the text \"I"
+  },
+  {
+    "text": "This is absolutely terrible and should be recalled.",
+    "predicted_sentiment": "NEGATIVE",
+    "confidence": 0.95,
+    "generated_part": " Negative.\n\nThe sentiment expressed in the text \"This"
+  },
+  {
+    "text": "The service was horrible and unprofessional.",
+    "predicted_sentiment": "NEGATIVE",
+    "confidence": 0.95,
+    "generated_part": " Negative.\n\nThe given text \"The service was horrible"
+  },
+  {
+    "text": "I'm disgusted with the poor customer experience.",
+    "predicted_sentiment": "NEGATIVE",
+    "confidence": 0.95,
+    "generated_part": " Negative.\n\nThe sentiment expressed in the text \"I"
+  },
+  {
+    "text": "This is completely unacceptable and needs improvement.",
+    "predicted_sentiment": "NEGATIVE",
+    "confidence": 0.95,
+    "generated_part": " Negative.\n\nThe sentiment expressed in the text \"This"
+  },
+  {
+    "text": "The quality is terrible and not worth anything.",
+    "predicted_sentiment": "NEGATIVE",
+    "confidence": 0.95,
+    "generated_part": " Negative.\n\nThe given text expresses a strong negative sentiment"
+  },
+  {
+    "text": "I'm outraged by the poor performance and reliability.",
+    "predicted_sentiment": "NEGATIVE",
+    "confidence": 0.95,
+    "generated_part": " Negative.\n\nThe sentiment expressed in the text is clearly"
+  },
+  {
+    "text": "The product arrived on time and was packaged well.",
+    "predicted_sentiment": "POSITIVE",
+    "confidence": 0.95,
+    "generated_part": " Positive.\n\nThe given text \"The product arrived on"
+  },
+  {
+    "text": "The restaurant was busy but we got a table quickly.",
+    "predicted_sentiment": "POSITIVE",
+    "confidence": 0.95,
+    "generated_part": " Positive.\n\nThe phrase \"got a table quickly\""
+  },
+  {
+    "text": "The movie had some good scenes but also some slow parts.",
+    "predicted_sentiment": "NEGATIVE",
+    "confidence": 0.95,
+    "generated_part": " Negative.\n\nThe given text contains mixed sentiments; it"
+  },
+  {
+    "text": "The weather is neither good nor bad today.",
+    "predicted_sentiment": "NEUTRAL",
+    "confidence": 0.9,
+    "generated_part": " Neutral.\n\nThe given statement \"The weather is neither"
+  },
+  {
+    "text": "The app works as expected with standard functionality.",
+    "predicted_sentiment": "POSITIVE",
+    "confidence": 0.95,
+    "generated_part": " Positive.\n\nThe sentiment of the text is positive because"
+  },
+  {
+    "text": "The party had both good and bad moments.",
+    "predicted_sentiment": "NEUTRAL",
+    "confidence": 0.9,
+    "generated_part": " Neutral.\n\nThe given statement \"The party had both"
+  },
+  {
+    "text": "The book contains interesting information about the topic.",
+    "predicted_sentiment": "POSITIVE",
+    "confidence": 0.95,
+    "generated_part": " Positive.\n\nThe sentiment analysis of the given text is"
+  },
+  {
+    "text": "The service was adequate but nothing special.",
+    "predicted_sentiment": "NEGATIVE",
+    "confidence": 0.95,
+    "generated_part": " Negative.\n\nThe given text \"The service was adequate"
+  },
+  {
+    "text": "The product meets basic requirements but could be improved.",
+    "predicted_sentiment": "NEGATIVE",
+    "confidence": 0.95,
+    "generated_part": " Negative.\n\nThe sentiment analysis suggests that the text is"
+  },
+  {
+    "text": "The experience was neither particularly good nor bad.",
+    "predicted_sentiment": "NEUTRAL",
+    "confidence": 0.9,
+    "generated_part": " Neutral.\n\nThe given statement \"The experience was neither"
+  },
+  {
+    "text": "The delivery was on schedule and the packaging was fine.",
+    "predicted_sentiment": "POSITIVE",
+    "confidence": 0.95,
+    "generated_part": " Positive.\n\nThe sentiment of the text is positive because"
+  },
+  {
+    "text": "The food was okay, not great but not terrible either.",
+    "predicted_sentiment": "NEUTRAL",
+    "confidence": 0.9,
+    "generated_part": " Neutral.\n\nThe given statement \"The food was okay"
+  },
+  {
+    "text": "The movie was average with mixed reviews from critics.",
+    "predicted_sentiment": "NEGATIVE",
+    "confidence": 0.95,
+    "generated_part": " Negative.\n\nThe given text \"The movie was average"
+  },
+  {
+    "text": "The weather is moderate with occasional light rain.",
+    "predicted_sentiment": "POSITIVE",
+    "confidence": 0.95,
+    "generated_part": " Positive.\n\nThe given text describes a \"moderate"
+  },
+  {
+    "text": "The application functions normally without any issues.",
+    "predicted_sentiment": "POSITIVE",
+    "confidence": 0.95,
+    "generated_part": " Positive.\n\nThe sentiment of the text is positive because"
+  },
+  {
+    "text": "The event was standard with typical activities.",
+    "predicted_sentiment": "NEUTRAL",
+    "confidence": 0.9,
+    "generated_part": " Neutral.\n\nThe given statement \"The event was standard"
+  },
+  {
+    "text": "The content provides useful information for beginners.",
+    "predicted_sentiment": "POSITIVE",
+    "confidence": 0.95,
+    "generated_part": " Positive.\n\nThe sentiment analysis suggests that the text is"
+  },
+  {
+    "text": "The support team responded within normal timeframes.",
+    "predicted_sentiment": "POSITIVE",
+    "confidence": 0.95,
+    "generated_part": " Positive.\n\nThe given text \"The support team responded"
+  },
+  {
+    "text": "The item performs as advertised without surprises.",
+    "predicted_sentiment": "POSITIVE",
+    "confidence": 0.95,
+    "generated_part": " Positive.\n\nThe sentiment of the text is positive because"
+  },
+  {
+    "text": "The overall experience was satisfactory and uneventful.",
+    "predicted_sentiment": "POSITIVE",
+    "confidence": 0.95,
+    "generated_part": " Positive.\n\nThe given text \"The overall experience was"
+  }
+]
