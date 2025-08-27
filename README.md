@@ -61,6 +61,22 @@ pip install -r requirements.txt
 
 # Setup environment
 bash scripts/setup_environment.sh
+
+## 📊 Viewing Results and Performance
+
+To view the comprehensive results including charts, confusion matrices, and performance visualizations:
+
+### Option 1: Direct File Access
+- Navigate to the `Binary results/` directory for binary classification results
+- Check `Sentiment_Qwen2_ model results/` for detailed model performance analysis
+- Open PDF files to view charts and visualizations
+
+### Option 2: Generate Results
+```bash
+# Run the complete testing script to generate new results
+python "Binary results/sentiment_analysis_complete_testing (1).py"
+
+# View results in the generated output files
 ```
 
 ## 📁 Project Structure
@@ -194,6 +210,30 @@ response = requests.post(
 | Confidence | ✅ | ✅ | ✅ |
 | Training Cost | Low | Medium | High |
 | Inference Speed | Fast | Fast | Medium |
+
+## 📈 Results and Performance
+
+### Sentiment Analysis Results
+The model has been extensively tested and evaluated on various datasets. Detailed results including performance metrics, confusion matrices, and analysis charts can be found in the following files:
+
+#### 📋 Binary Classification Results
+- **Complete Results Report**: `Binary results/Qwen2_Binary_Sentiment_Analysis_Results_20250826_032309.docx`
+- **Results Summary**: `Binary results/Code and results.pdf`
+- **Test Cases**: `Binary results/test_cases_20250826_032309.txt`
+- **Performance Data**: `Binary results/sentiment_analysis_results_20250826_032309.csv`
+
+#### 📊 Model Performance Analysis
+- **Detailed Analysis**: `Sentiment_Qwen2_ model results/with Neutral results.pdf`
+- **Results Summary**: `Sentiment_Qwen2_ model results/sentiment_analysis_summary_20250821_183948.txt`
+- **Performance Metrics**: `Sentiment_Qwen2_ model results/sentiment_analysis_results_20250821_183741.csv`
+
+### Key Performance Highlights
+- **Binary Classification Accuracy**: High accuracy on sentiment classification tasks
+- **Multi-class Performance**: Robust performance across different sentiment categories
+- **Real-world Testing**: Validated on diverse text datasets including social media and product reviews
+- **Comprehensive Evaluation**: Includes precision, recall, F1-score, and confusion matrix analysis
+
+> **Note**: To view the detailed results with charts and visualizations, please open the PDF files in the results directories. These contain comprehensive performance analysis, confusion matrices, and detailed evaluation metrics.
 
 ## 🤝 Contributing
 
